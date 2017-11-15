@@ -1,1 +1,0 @@
-# sn-kinos.github.com
