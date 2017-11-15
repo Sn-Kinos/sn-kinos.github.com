@@ -1,0 +1,116 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+    
+	text-align: center;
+	font-family: "나눔스퀘어", "맑은 고딕";
+	font-weight: bold;
+	
+}
+#Kodex {
+
+	width: 813px;	height: 696px;
+	text-align: center;
+	margin: 10px auto;
+	line-height: 1.5;
+	background: #E3E4EE;
+	border-collapse: collapse;
+	border-spacing: 0px;
+	border: 1px solid #dddddd;
+	color: #0A1533;
+
+}
+
+#td_rarity {
+
+	font-size: 28px;
+	color: white;
+
+}
+
+#td_name {
+	
+	font-size: 28px;
+	color: white;
+
+}
+
+#td_role {
+    
+	font-size: 40px;
+	color: white;
+	
+}
+
+#kodex_srch {
+    
+	font-family: "나눔스퀘어", "맑은 고딕";
+	font-weight: bold;
+	width: 700px;
+	text-align: left;
+	margin: 0px auto;
+	font-size: 21px;
+	
+}
+
+#kodex_exmpl {
+	position: absolute;
+	top: 100%;
+	left: 0px;
+	z-index: 1000;
+	display: block;
+	float: left;
+	min-width: 160px;
+	font-size: 18px;
+	padding: 5px;
+	margin: 2px 0 0;
+	color: #373a3c;
+	text-align: left;
+	list-style: none;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid rgba(0,0,0,0.15);
+	border-radius: .2rem;
+}
+
+li {
+	padding: 3px;
+}
+
+
+th {
+
+	font-weight: bold;
+	font-size: 21px;
+	border: 1px solid #dddddd;
+	padding: 5px 10px;
+
+}
+
+td {
+
+	font-weight: bold;
+	border: 1px solid #dddddd;
+	padding: 5px 10px;
+
+}
+
+.kodex_ind {
+
+	background: #5A688A;
+	color:	white;
+
+}
+
+.kodex_bind {
+
+	background: #00B4FF;
+	color: white;
+
+}
+
+.kodex_imgRank {
+
+	background: #FFEB3B;
+
+}
