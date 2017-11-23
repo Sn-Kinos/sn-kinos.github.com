@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta charset="utf-8">
+	<title>QUTABASE</title>
+	<link href="nanum.css" rel="stylesheet">
+	<script type="text/javascript" src="QB.js"></script>
+	<style type="text/css">
+		body {
+			text-align: center;
+			margin: 0px;
+			font-size: 24px;
+		}
+		div {
+			display: inline-block;
+			float: left;
+			font-family: "NanumSquareB", "나눔스퀘어", "맑은 고딕";
+			padding: 5px 10px;
+		}
+		#main {
+			margin: 0px auto;
+			width: 100%; height: 100%;
+			max-width: 1024px; max-height: 696px;
+		}
+		#kodex_header {
+			width: 100%; height: 83px;
+			padding: 0px;
+		}
+		#kodex_header:before {
+		  content: "";
+		  display: inline-block;
+		  vertical-align: middle;
+		  height: 100%;
+		}
+		#kodex_header_m {
+			width: 100%;
+			padding: 0px;
+			display: none;
+		}
+		.kodex_head {
+			/*height: calc(100% - 10px);*/
+		  display: inline-block;
+		  vertical-align: middle;
+		}
+		#kodex_rarity {
+			width: calc(11% - 20px);
+		}
+		#kodex_name {
+			width: calc(78% - 20px);
+		}
+		#kodex_cost {
+			width: calc(11% - 20px);
+		}
+		#kodex_rarity_m {
+			width: calc(50% - 20px);
+		}
+		#kodex_name_m {
+			width: calc(100% - 20px);
+		}
+		#kodex_cost_m {
+			width: calc(50% - 20px);
+		}
+		#kodex_skill {
+			width: calc(33% - 20px);
+		}
+		#kodex_desc {
+			width: calc(67% - 20px);
+		}
+		.kodex_desc_detail {
+			width: calc(50% - 20px);
+		}
+		.kodex_img {
+			width: calc(100% / 3 - 20.01px);
+		}
+		.kodex_imgfile {
+			width: 100%;
+		}
+		.kodex_statchart {
+			width: calc(100% / 8 - 20.01px);
+		}
+		.kodex_stat {
+			width: calc(100% - 20px);
+		}
+
+		@media (max-width: 1000px){
+			#main{max-width: 100%;}
+			#kodex_skill{width: calc(100% - 20px);}
+			#kodex_desc{width: calc(100% - 20px);}
+			.kodex_statchart{width: calc(100% - 20px);}
+			.kodex_stat{width: calc(25% - 20px);}
+
+		}
+
+		@media (max-width: 540px){
+			.kodex_desc_detail{width: calc(100% - 20px);}
+		}
+		@media (max-width: 480px){
+			.kodex_img{width: calc(100% - 20px);}
+			#kodex_header{display: none;}
+			#kodex_header_m{display: inline-block;}
+		}
+	</style>
+</head>
+<body>
+	<img id="logo" src="logo.svg"><br>
+		<article id="main">
+		<div id="kodex_header">
+			<div class="kodex_head" id="kodex_rarity">
+				SSR
+			</div>
+			<div class="kodex_head" id="kodex_name">
+				셀라
+			</div>
+			<div class="kodex_head" id="kodex_cost">
+				cost<br>26
+			</div>
+		</div>
+		<div id="kodex_header_m">
+			<div class="kodex_head" id="kodex_name_m">
+				셀라
+			</div>
+			<div class="kodex_head" id="kodex_rarity_m">
+				SSR
+			</div>
+			<div class="kodex_head" id="kodex_cost_m">
+				cost<br>26
+			</div>
+		</div>
+			<div id="kodex_skill">
+				강타
+			</div>
+			<div id="kodex_desc">
+				<div class="kodex_desc_detail">
+					<div style="width: calc(33% - 20px);">
+						역할
+					</div>
+					<div style="text-align: left; width: calc(67% - 20px);">
+						공격
+					</div>
+				</div>
+				<div class="kodex_desc_detail">
+					<div style="width: calc(33% - 20px);">
+						속성
+					</div>
+					<div style="text-align: left; width: calc(67% - 20px);">
+						액티브
+					</div>
+				</div>
+				<div class="kodex_desc_detail">
+					<div style="width: calc(33% - 20px);">
+						장르
+					</div>
+					<div style="text-align: left; width: calc(67% - 20px);">
+						오리엔탈
+					</div>
+				</div>
+				<div class="kodex_desc_detail">
+					<div style="width: calc(33% - 20px);">
+						그림
+					</div>
+					<div style="text-align: left; width: calc(67% - 20px);">
+						아이작 헤인 3세
+					</div>
+				</div>
+			</div>
+			<div class="kodex_img">
+				<div style="width: calc(100% - 20px);">
+					NORMAL
+				</div>
+					<img class="kodex_imgfile" id="kodex_img_0" src="/Kodex/atk/Smite/7/17005/17005an.jpg">
+			</div>
+			<div class="kodex_img">
+				<div style="width: calc(100% - 20px);">
+					MAX
+				</div>
+					<img class="kodex_imgfile" id="kodex_img_1" src="/Kodex/atk/Smite/7/17005/17005bn.jpg">
+			</div>
+			<div class="kodex_img">
+				<div style="width: calc(100% - 20px);">
+					MAX+
+				</div>
+					<img class="kodex_imgfile" id="kodex_img_2" src="/Kodex/atk/Smite/7/17005/17005cn.jpg">
+			</div>
+			<div class="kodex_statchart">
+				<div class="kodex_stat">
+					스탯
+				</div>
+				<div class="kodex_stat">
+					HP
+				</div>
+				<div class="kodex_stat">
+					ATK
+				</div>
+				<div class="kodex_stat">
+					SPR
+				</div>
+			</div>
+			<div class="kodex_statchart">
+				<div class="kodex_stat">
+					Lv.1
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+			</div>
+			<div class="kodex_statchart">
+				<div class="kodex_stat">
+					Lv.MAX
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+			</div>
+			<div class="kodex_statchart">
+				<div class="kodex_stat">
+					1결속
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+			</div>
+			<div class="kodex_statchart">
+				<div class="kodex_stat">
+					2결속
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+			</div>
+			<div class="kodex_statchart">
+				<div class="kodex_stat">
+					3결속
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+			</div>
+			<div class="kodex_statchart">
+				<div class="kodex_stat">
+					4결속
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+			</div>
+			<div class="kodex_statchart">
+				<div class="kodex_stat">
+					5결속
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+			</div>
+		</article>
+</body>
+</html>
