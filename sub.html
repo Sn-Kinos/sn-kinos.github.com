@@ -16,87 +16,118 @@
 			display: inline-block;
 			float: left;
 			font-family: "NanumSquareB", "나눔스퀘어", "맑은 고딕";
-			padding: 5px 10px;
+			padding: 4px 9px;
+			margin: 1px;
+			background: #e3e4ee;
+
+		}
+		#logo {
+			max-width: 550px;
 		}
 		#main {
 			margin: 0px auto;
 			width: 100%; height: 100%;
-			max-width: 1024px; max-height: 696px;
+			max-width: 1024px; max-height: 864px;
+			display: inline-block;
+			background: #dddddd;
+			overflow: hidden;
+		}
+		.kodex_head {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0px;
+			margin-right: 2px;
+			padding: 23.5px 15px;
+			float: none;
 		}
 		#kodex_header {
-			width: 100%; height: 83px;
+			width: 100%;
+			height: 83px;
 			padding: 0px;
 		}
 		#kodex_header:before {
-		  content: "";
-		  display: inline-block;
-		  vertical-align: middle;
-		  height: 100%;
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
 		}
 		#kodex_header_m {
 			width: 100%;
 			padding: 0px;
 			display: none;
 		}
-		.kodex_head {
-			/*height: calc(100% - 10px);*/
-		  display: inline-block;
-		  vertical-align: middle;
-		}
 		#kodex_rarity {
-			width: calc(11% - 20px);
+			width: calc(22% - 22px);
+			color: white;
+			font-size: 32px;
 		}
 		#kodex_name {
-			width: calc(78% - 20px);
+			width: calc(67% - 22px);
+			color: white;
+			font-size: 32px;
 		}
 		#kodex_cost {
-			width: calc(11% - 20px);
+			width: calc(11% - 22px);
+			padding: 14.5px 0px;
 		}
 		#kodex_rarity_m {
-			width: calc(50% - 20px);
+			width: calc(50% - 33px);
+			padding-top: 37px; padding-bottom: 37px;
 		}
 		#kodex_name_m {
-			width: calc(100% - 20px);
+			width: calc(100% - 33px);
+			margin-bottom: 2px;
 		}
 		#kodex_cost_m {
-			width: calc(50% - 20px);
+			width: calc(50% - 33px);
 		}
 		#kodex_skill {
-			width: calc(33% - 20px);
+			width: calc(33% - 16px);
+			line-height: 93px;
+			font-size: 40px;
 		}
 		#kodex_desc {
-			width: calc(67% - 20px);
+			width: calc(67% - 6px); height: 101px;
+			background: #dddddd;
+			padding: 0px;
 		}
 		.kodex_desc_detail {
-			width: calc(50% - 20px);
+			width: 50%; height: 50%;
+			padding: 0px;	margin: 0px/* 2px 2px 0px*/;
+			background: #dddddd;
 		}
 		.kodex_img {
-			width: calc(100% / 3 - 20.01px);
+			width: calc(100% / 3 - 2.01px);
+			padding: 0px;
+			background: #dddddd;
 		}
 		.kodex_imgfile {
-			width: 100%;
+			width: calc(100% - 2px);
 		}
 		.kodex_statchart {
-			width: calc(100% / 8 - 20.01px);
+			width: calc(100% / 9 - 2.01px);
+			padding: 0px;
+			background: #dddddd;
 		}
 		.kodex_stat {
 			width: calc(100% - 20px);
 		}
 
 		@media (max-width: 1000px){
-			#main{max-width: 100%;}
+			#main{max-width: 100%; max-height: 100%;}
 			#kodex_skill{width: calc(100% - 20px);}
-			#kodex_desc{width: calc(100% - 20px);}
+			#kodex_desc{width: 100%;}
 			.kodex_statchart{width: calc(100% - 20px);}
 			.kodex_stat{width: calc(25% - 20px);}
-
+			#kodex_name{width: calc(56% - 22px);}
+			#kodex_cost{width: calc(22% - 22px);}
 		}
 
 		@media (max-width: 540px){
-			.kodex_desc_detail{width: calc(100% - 20px);}
+			.kodex_desc_detail{width: calc(100% - 2px);}
+			#kodex_desc{height: auto;}
 		}
 		@media (max-width: 480px){
-			.kodex_img{width: calc(100% - 20px);}
+			.kodex_img{width: calc(100% - 2px);}
 			#kodex_header{display: none;}
 			#kodex_header_m{display: inline-block;}
 		}
@@ -106,60 +137,56 @@
 	<img id="logo" src="logo.svg"><br>
 		<article id="main">
 		<div id="kodex_header">
-			<div class="kodex_head" id="kodex_rarity">
+			<div class="kodex_head" style="background: #E10044;" id="kodex_rarity">
 				SSR
-			</div>
-			<div class="kodex_head" id="kodex_name">
+			</div><div class="kodex_head" style="background: #E10044;" id="kodex_name">
 				셀라
-			</div>
-			<div class="kodex_head" id="kodex_cost">
-				cost<br>26
+			</div><div class="kodex_head" style="background: #FFEB3B;" id="kodex_cost">
+				COST<br>26
 			</div>
 		</div>
 		<div id="kodex_header_m">
-			<div class="kodex_head" id="kodex_name_m">
+			<div class="kodex_head" style="background: #E10044;" id="kodex_name_m">
 				셀라
-			</div>
-			<div class="kodex_head" id="kodex_rarity_m">
+			</div><div class="kodex_head" style="background: #E10044;" id="kodex_rarity_m">
 				SSR
-			</div>
-			<div class="kodex_head" id="kodex_cost_m">
-				cost<br>26
+			</div><div class="kodex_head" style="background: #FFEB3B;" id="kodex_cost_m">
+				COST<br>26
 			</div>
 		</div>
-			<div id="kodex_skill">
-				강타
+			<div id="kodex_skill" style="background: red; color: white;">
+				강타 VI
 			</div>
 			<div id="kodex_desc">
 				<div class="kodex_desc_detail">
-					<div style="width: calc(33% - 20px);">
+					<div style="width: calc(33% - 20px); height: calc(100% - 10px); line-height: 39.5px;">
 						역할
 					</div>
-					<div style="text-align: left; width: calc(67% - 20px);">
+					<div style="text-align: left; width: calc(67% - 20px); height: calc(100% - 10px); line-height: 39.5px;">
 						공격
 					</div>
 				</div>
 				<div class="kodex_desc_detail">
-					<div style="width: calc(33% - 20px);">
+					<div style="width: calc(33% - 20px); height: calc(100% - 10px); line-height: 39.5px;">
 						속성
 					</div>
-					<div style="text-align: left; width: calc(67% - 20px);">
+					<div style="text-align: left; width: calc(67% - 20px); height: calc(100% - 10px); line-height: 39.5px;">
 						액티브
 					</div>
 				</div>
 				<div class="kodex_desc_detail">
-					<div style="width: calc(33% - 20px);">
+					<div style="width: calc(33% - 20px); height: calc(100% - 10px); line-height: 39.5px;">
 						장르
 					</div>
-					<div style="text-align: left; width: calc(67% - 20px);">
+					<div style="text-align: left; width: calc(67% - 20px); height: calc(100% - 10px); line-height: 39.5px;">
 						오리엔탈
 					</div>
 				</div>
 				<div class="kodex_desc_detail">
-					<div style="width: calc(33% - 20px);">
+					<div style="width: calc(33% - 20px); height: calc(100% - 10px); line-height: 39.5px;">
 						그림
 					</div>
-					<div style="text-align: left; width: calc(67% - 20px);">
+					<div style="text-align: left; width: calc(67% - 20px); height: calc(100% - 10px); line-height: 39.5px;">
 						아이작 헤인 3세
 					</div>
 				</div>
@@ -168,19 +195,19 @@
 				<div style="width: calc(100% - 20px);">
 					NORMAL
 				</div>
-					<img class="kodex_imgfile" id="kodex_img_0" src="/Kodex/atk/Smite/7/17005/17005an.jpg">
+					<img class="kodex_imgfile" id="kodex_img_0" src="Kodex/atk/Smite/7/17005/17005an.jpg">
 			</div>
 			<div class="kodex_img">
 				<div style="width: calc(100% - 20px);">
 					MAX
 				</div>
-					<img class="kodex_imgfile" id="kodex_img_1" src="/Kodex/atk/Smite/7/17005/17005bn.jpg">
+					<img class="kodex_imgfile" id="kodex_img_1" src="Kodex/atk/Smite/7/17005/17005bn.jpg">
 			</div>
 			<div class="kodex_img">
 				<div style="width: calc(100% - 20px);">
 					MAX+
 				</div>
-					<img class="kodex_imgfile" id="kodex_img_2" src="/Kodex/atk/Smite/7/17005/17005cn.jpg">
+					<img class="kodex_imgfile" id="kodex_img_2" src="Kodex/atk/Smite/7/17005/17005cn.jpg">
 			</div>
 			<div class="kodex_statchart">
 				<div class="kodex_stat">
@@ -283,6 +310,20 @@
 			<div class="kodex_statchart">
 				<div class="kodex_stat">
 					5결속
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+				<div class="kodex_stat">
+					0000
+				</div>
+			</div>
+			<div class="kodex_statchart">
+				<div class="kodex_stat">
+					초월
 				</div>
 				<div class="kodex_stat">
 					0000
