@@ -49,7 +49,7 @@
 		#kodex_srch {
 		
 			font-family: "NanumSquareB", "맑은 고딕";
-			width: calc(100% - 64px);
+			width: calc(100% - 55px);
 			max-width: 700px;
 			text-align: left;
 			margin-left: 40px;
@@ -94,10 +94,10 @@
 
 
 		#main {
-			margin: 0px auto;
+			margin: 10px auto;
 			margin-left: 40px;
 			width: calc(100% - 50px); height: 100%;
-			max-width: 812px; max-height: 776px;
+			max-width: 812px; max-height: 801px;
 			display: inline-block;
 			background: #dddddd;
 			overflow: hidden;
@@ -107,7 +107,7 @@
 			vertical-align: middle;
 			margin: 0px;
 			margin-right: 2px;
-			padding: 13.5px 15px;
+			padding: 13.5px 9px;
 			height: 56px;
 			line-height: 56px;
 			float: none;
@@ -116,6 +116,7 @@
 			width: 100%;
 			height: 83px;
 			padding: 0px;
+			background: #dddddd;
 		}
 		#kodex_header:before {
 			display: inline-block;
@@ -138,33 +139,33 @@
 			font-size: 32px;
 		}
 		#kodex_cst {
-			width: calc(11% - 22px);
-			padding: 14.5px 0px;
+			width: calc(11% + 2px);
+			padding: 13.5px 0px;
 		}
 		#kodex_rarity_m {
-			width: calc(50% - 33px);
+			width: calc(50% - 20px);
 			color: white;
 			font-size: 32px;
 			padding-top: 22.5px; padding-bottom: 22.5px;
 		}
 		#kodex_name_m {
-			width: calc(100% - 33px);
+			width: calc(100% - 20px);
 			color: white;
 			font-size: 32px;
 			margin-bottom: 2px;
 		}
 		#kodex_cst_m {
-			width: calc(50% - 33px);
+			width: calc(50% - 20px);
 			padding-top: 22.5px; padding-bottom: 22.5px;
 		}
 		#kodex_skill {
-			width: calc(33% - 16px);
-			line-height: 93px;
+			width: calc(33% - 17px);
+			line-height: 81px;
 			font-size: 40px;
 			color: white;
 		}
 		#kodex_desc {
-			width: calc(67% - 6px); height: 101px;
+			width: calc(67% - 6px); height: 90px;
 			background: #dddddd;
 			padding: 0px;
 		}
@@ -178,18 +179,19 @@
 		}
 		.kodex_desc_detail_ind{
 			width: calc(33% - 20px); height: calc(100% - 10px);
-			line-height: 39.5px;
+			line-height: 35px;
 			background: #5A688A; color: white;
 		}
 		.kodex_desc_detail_val{
 			width: calc(67% - 20px); height: calc(100% - 10px);
-			line-height: 39.5px;
+			line-height: 35px;
 			text-align: left;
 		}
 		.kodex_img {
 			width: calc(100% / 3 - 2.01px);
 			padding: 0px;
 			background: #dddddd;
+			max-height: 426px;
 		}
 		.kodex_imgRank {
 			width: calc(100% - 18px);
@@ -217,12 +219,13 @@
 		}
 		@media (max-width: 1000px){
 			#main{max-width: 100%; max-height: 100%;}
+			#kodex_name{width: calc(56% - 22px);}
+			#kodex_cst{width: calc(22% + 2px);}
 			#kodex_skill{width: calc(100% - 20px);}
 			#kodex_desc{width: 100%;}
+			.kodex_img{max-height: none;}
 			.kodex_statchart{width: 100%; margin: 0px;}
 			.kodex_stat{width: calc(25% - 20px); margin-right: 2px;}
-			#kodex_name{width: calc(56% - 22px);}
-			#kodex_cst{width: calc(22% - 22px);}
 		}
 
 		@media (max-width: 835px){
@@ -242,7 +245,7 @@
 	</div>
 	<header id="Kodex_form"><br>
 		<a href="/"><img id="logo" src="logo.svg"></a><br>
-		<input type="text" id="kodex_srch" onkeyup="check()" placeholder="마도서 이름을 입력하세요!"><br><br>
+		<input type="text" id="kodex_srch" onkeyup="check()" placeholder="마도서 이름을 입력하세요!"><br>
 		<ul id="kodex_exmpl" style="display: none;">
 		</ul>
 	</header>
@@ -324,13 +327,13 @@
 			<div class="kodex_stat" style="background: #5A688A; color: white;">
 				스탯
 			</div>
-			<div class="kodex_stat" style="background: #5A688A; color: white;">
+			<div class="kodex_stat" style="background: #5A688A; color: white; text-align: left;">
 				HP
 			</div>
-			<div class="kodex_stat" style="background: #5A688A; color: white;">
+			<div class="kodex_stat" style="background: #5A688A; color: white; text-align: left;">
 				ATK
 			</div>
-			<div class="kodex_stat" style="background: #5A688A; color: white;">
+			<div class="kodex_stat" style="background: #5A688A; color: white; text-align: left;">
 				SPR
 			</div>
 		</div>
@@ -350,7 +353,7 @@
 		</div>
 		<div class="kodex_statchart">
 			<div class="kodex_stat" style="background: #5A688A; color: white;">
-				Lv.MAX
+				MAX
 			</div>
 			<div id="kodex_HP_0" class="kodex_stat">
 				3617
