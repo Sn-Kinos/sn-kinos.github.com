@@ -32,13 +32,13 @@ function check(argument) {
 		return;
 
 	}
-	else if (kodex_srch.value != '' && srch_len == kodex_srch.length) {
+	else if (kodex_srch.value != '' && srch_len == inp.value.length) {
 		showExmpl(kodex_srch.value);
 	}
 	else if (kodex_srch.value == '' && window.event.keyCode == 8) {
-	document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;');		
+		document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;');		
 	}
-	srch_len = kodex_srch.length;
+	srch_len = inp.value.length;
 
 }
 rarity = {
@@ -62,8 +62,12 @@ function search(srch) {
 	dex = eval("Jdex['" + srch + "']");
 	if (dex != undefined) {
 
-		if (srch.indexOf('®') != -1) {
+		if (srch.indexOf('® ') != -1) {
 			temp = srch.substring(2);
+			dex = eval("Jdex['" + temp + "']");
+		}
+		else if (srch.indexOf('®') != -1) {
+			temp = srch.substring(1);
 			dex = eval("Jdex['" + temp + "']");
 		}
 		document.getElementById('kodex_img_0').setAttribute('src', encodeURI('Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'an.jpg'));

@@ -22,6 +22,7 @@
 			margin: 0px;
 			font-size: 24px;
 			font-family: "NanumSquareB", "나눔스퀘어", "맑은 고딕";
+			background-image: url(bgW.png);
 		}
 		div {
 			display: inline-block;
@@ -162,6 +163,16 @@
 			padding: 0px;	margin: 0px/* 2px 2px 0px*/;
 			background: #dddddd;
 		}
+		.kodex_desc_detail_ind{
+			width: calc(33% - 20px); height: calc(100% - 10px);
+			line-height: 39.5px;
+			background: #5A688A; color: white;
+		}
+		.kodex_desc_detail_val{
+			width: calc(67% - 20px); height: calc(100% - 10px);
+			line-height: 39.5px;
+			text-align: left;
+		}
 		.kodex_img {
 			width: calc(100% / 3 - 2.01px);
 			padding: 0px;
@@ -174,7 +185,8 @@
 			background: #FFEB3B;
 		}
 		.kodex_imgfile {
-			width: calc(100% - 2px);
+			width: 100%;
+			margin-top: 2px;
 		}
 		.kodex_statchart {
 			width: calc(100% / 9 - 2.01px);
@@ -240,35 +252,35 @@
 		</div>
 		<div id="kodex_desc">
 			<div class="kodex_desc_detail">
-				<div style="width: calc(33% - 20px); height: calc(100% - 10px); line-height: 39.5px;">
+				<div class="kodex_desc_detail_ind">
 					역할
 				</div>
-				<div id="kodex_role" style="text-align: left; width: calc(67% - 20px); height: calc(100% - 10px); line-height: 39.5px;">
+				<div id="kodex_role" class="kodex_desc_detail_val">
 					공격
 				</div>
 			</div>
 			<div class="kodex_desc_detail">
-				<div style="width: calc(33% - 20px); height: calc(100% - 10px); line-height: 39.5px;">
+				<div class="kodex_desc_detail_ind">
 					속성
 				</div>
-				<div id="kodex_skilltype" style="text-align: left; width: calc(67% - 20px); height: calc(100% - 10px); line-height: 39.5px;">
+				<div id="kodex_skilltype" class="kodex_desc_detail_val">
 					액티브
 				</div>
 			</div>
 			<div class="kodex_desc_detail">
-				<div style="width: calc(33% - 20px); height: calc(100% - 10px); line-height: 39.5px;">
+				<div class="kodex_desc_detail_ind">
 					장르
 				</div>
-				<div id="kodex_faction" style="text-align: left; width: calc(67% - 20px); height: calc(100% - 10px); line-height: 39.5px;">
-					오리엔탈
+				<div id="kodex_faction" class="kodex_desc_detail_val">
+					판타지
 				</div>
 			</div>
 			<div class="kodex_desc_detail">
-				<div style="width: calc(33% - 20px); height: calc(100% - 10px); line-height: 39.5px;">
+				<div class="kodex_desc_detail_ind">
 					그림
 				</div>
-				<div id="kodex_illustrator" style="text-align: left; width: calc(67% - 20px); height: calc(100% - 10px); line-height: 39.5px;">
-					아이작 헤인 3세
+				<div id="kodex_illustrator" class="kodex_desc_detail_val">
+					달랑게
 				</div>
 			</div>
 		</div>
