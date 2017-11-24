@@ -1,560 +1,452 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta charset="utf-8">
 	<title>QUTABASE</title>
-	<!-- <link type="text/css" href="QB.css" rel="stylesheet"> -->
-	<!-- <link type="text/css" href="nanum.css" rel="stylesheet"> -->
-	<!-- <script type="text/javascript" src="QB.js"></script> -->
+	<script type="text/javascript" src="QB_reactive.js"></script>
 	<style type="text/css">
-@charset "utf-8";
-@font-face {
-	font-family: 'NanumSquareR';
-	src: url(fonts/NanumSquareR.ttf) format('truetype');
-}
+		@charset "utf-8";
 
-@font-face {
-	font-family: 'NanumSquareB';
-	src: url(fonts/NanumSquareB.ttf) format('truetype');
-}
-/* CSS Document */
-/*@media (max-width:375px){body{font-size:10px;}}
-@media (min-width:376px) and (max-width:414px){body{font-size:11px;}}
-@media (min-width:415px) and (max-width:454px){body{font-size:12px;}}
-@media (min-width:455px) and (max-width:494px){body{font-size:13px;}}
-@media (min-width:495px) and (max-width:534px){body{font-size:14px;}}
-@media (min-width:535px) and (max-width:574px){body{font-size:15px;}}
-@media (min-width:575px) and (max-width:614px){body{font-size:16px;}}
-@media (min-width:615px) and (max-width:654px){body{font-size:17px;}}
-@media (min-width:655px) and (max-width:694px){body{font-size:18px;}}
-@media (min-width:695px) and (max-width:734px){body{font-size:19px;}}
-@media (min-width:735px) and (max-width:774px){body{font-size:20px;}}
-@media (min-width:784px) {#kodex_cont{margin-right: 50px;}}
-@media (min-width:775px) and (max-width:814px){body{font-size:21px;}}
-@media (min-width:815px) and (max-width:854px){body{font-size:22px;}}
-@media (min-width:855px) and (max-width:894px){body{font-size:23px;}}
-@media (min-width:895px){body{font-size:24px;}}*/
-body {	text-align: center;
-	font-family: "NanumSquareB", "맑은 고딕";
-	background-image: url(bgW.png);
-	margin: 0px;
-	font-size: 24px;
-}
+		@font-face {
+			font-family: 'NanumSquareR';
+			src: url(fonts/NanumSquareR.ttf) format('truetype');
+		}
 
-#menu {
-	position: absolute;
-	top: 0px; left: 0px;
-	width: 40px; height: 100%;
-	background: #ffd400;
-}
+		@font-face {
+			font-family: 'NanumSquareB';
+			src: url(fonts/NanumSquareB.ttf) format('truetype');
+		}
+		body {
+			text-align: center;
+			margin: 0px;
+			font-size: 24px;
+			font-family: "NanumSquareB", "나눔스퀘어", "맑은 고딕";
+			background-image: url(bgW.png);
+		}
+		div {
+			display: inline-block;
+			float: left;
+			padding: 4px 9px;
+			margin: 1px;
+			background: #e3e4ee;
 
-#logo {
-	max-width: 550px;
-	margin-left: 40px;
-}
+		}
 
-#Kodex_form {
+		#menu {
+			position: absolute;
+			top: 0px; left: 0px;
+			width: 40px; height: 100%;
+			background: #ffd400;
+			padding: 0px;
+		}
 
-	/*background: linear-gradient(rgba(255, 255, 255, 0.8), #273869);*/
+		#logo {
+			max-width: 550px;
+			margin-left: 40px;
+		}
 
-}
+		#kodex_srch {
+		
+			font-family: "NanumSquareB", "맑은 고딕";
+			width: calc(100% - 64px);
+			max-width: 700px;
+			text-align: left;
+			margin-left: 40px;
+			font-size: 21px;
 
-#Kodex_cont {
-	margin: 10px 0px;
-	margin-left: 50px;
-	width: calc(100% - 60px);
-	margin-right: 10px;
-	text-align: center;
-}
+			
+		}
 
-#Kodex {
+		#kodex_exmpl {
 
-	width: 100%;
-	max-width: 813px;	height: 696px;
-	text-align: center;
-	line-height: 1.5;
-	margin: 0px auto;
-	background: #E3E4EE;
-	border-collapse: collapse;
-	border-spacing: 0px;
-	border: 1px solid #dddddd;
-	color: #0A1533;
-	top: 228px;
+			position: absolute;
+			top: 100%;
+			left: 0px;
+			z-index: 1000;
+			display: block;
+			float: left;
+			min-width: 160px;
+			max-height: 260px;
+			overflow-y:	auto;
+			font-size: 18px;
+			padding: 5px;
+			margin: 2px 0 0;
+			color: #373a3c;
+			text-align: left;
+			list-style: none;
+			background-color: #fff;
+			background-clip: padding-box;
+			border: 1px solid rgba(0,0,0,0.15);
+			border-radius: .2rem;
 
-}
+		}
 
-#td_rarity {
+		li {
+			padding: 3px;
+			cursor: pointer;
+			background: white;
+		}
 
-	font-size: 32px;
-	color: white;
-
-}
-
-#td_name {
-	
-	font-size: 32px;
-	color: white;
-
-}
-
-#td_skill {
-    
-	font-size: 40px;
-	color: white;
-	
-}
-
-#kodex_srch {
-    
-	font-family: "NanumSquareB", "맑은 고딕";
-	width: calc(100% - 64px);
-	max-width: 700px;
-	text-align: left;
-	margin-left: 40px;
-	font-size: 21px;
-
-	
-}
-
-#kodex_exmpl {
-
-	position: absolute;
-	top: 100%;
-	left: 0px;
-	z-index: 1000;
-	display: block;
-	float: left;
-	min-width: 160px;
-	max-height: 260px;
-	overflow-y:	auto;
-	font-size: 18px;
-	padding: 5px;
-	margin: 2px 0 0;
-	color: #373a3c;
-	text-align: left;
-	list-style: none;
-	background-color: #fff;
-	background-clip: padding-box;
-	border: 1px solid rgba(0,0,0,0.15);
-	border-radius: .2rem;
-
-}
-
-li {
-	padding: 3px;
-	cursor: pointer;
-	background: white;
-}
-
-li:hover {
-	background: #e3e4ee;
-}
+		li:hover {
+			background: #e3e4ee;
+		}
 
 
-th {
+		#main {
+			margin: 0px auto;
+			margin-left: 40px;
+			width: calc(100% - 50px); height: 100%;
+			max-width: 1024px; max-height: 913px;
+			display: inline-block;
+			background: #dddddd;
+			overflow: hidden;
+		}
+		.kodex_head {
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0px;
+			margin-right: 2px;
+			padding: 13.5px 15px;
+			height: 56px;
+			line-height: 56px;
+			float: none;
+		}
+		#kodex_header {
+			width: 100%;
+			height: 83px;
+			padding: 0px;
+		}
+		#kodex_header:before {
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+		}
+		#kodex_header_m {
+			width: 100%;
+			padding: 0px;
+			display: none;
+		}
+		#kodex_rarity {
+			width: calc(22% - 22px);
+			color: white;
+			font-size: 32px;
+		}
+		#kodex_name {
+			width: calc(67% - 22px);
+			color: white;
+			font-size: 32px;
+		}
+		#kodex_cst {
+			width: calc(11% - 22px);
+			padding: 14.5px 0px;
+		}
+		#kodex_rarity_m {
+			width: calc(50% - 33px);
+			color: white;
+			font-size: 32px;
+			padding-top: 22.5px; padding-bottom: 22.5px;
+		}
+		#kodex_name_m {
+			width: calc(100% - 33px);
+			color: white;
+			font-size: 32px;
+			margin-bottom: 2px;
+		}
+		#kodex_cst_m {
+			width: calc(50% - 33px);
+			padding-top: 22.5px; padding-bottom: 22.5px;
+		}
+		#kodex_skill {
+			width: calc(33% - 16px);
+			line-height: 93px;
+			font-size: 40px;
+			color: white;
+		}
+		#kodex_desc {
+			width: calc(67% - 6px); height: 101px;
+			background: #dddddd;
+			padding: 0px;
+		}
+		#kodex_illustrator {
+			overflow: auto;
+		}
+		.kodex_desc_detail {
+			width: 50%; height: 50%;
+			padding: 0px;	margin: 0px/* 2px 2px 0px*/;
+			background: #dddddd;
+		}
+		.kodex_desc_detail_ind{
+			width: calc(33% - 20px); height: calc(100% - 10px);
+			line-height: 39.5px;
+			background: #5A688A; color: white;
+		}
+		.kodex_desc_detail_val{
+			width: calc(67% - 20px); height: calc(100% - 10px);
+			line-height: 39.5px;
+			text-align: left;
+		}
+		.kodex_img {
+			width: calc(100% / 3 - 2.01px);
+			padding: 0px;
+			background: #dddddd;
+		}
+		.kodex_imgRank {
+			width: calc(100% - 18px);
+			margin: 0px;
+			padding: 10px 9px;
+			background: #FFEB3B;
+		}
+		.kodex_imgfile {
+			width: 100%;
+			margin-top: 2px;
+		}
+		.kodex_statchart {
+			width: calc(100% / 9 - 2.01px);
+			padding: 0px;
+			background: #dddddd;
+		}
+		.kodex_stat {
+			width: calc(100% - 18px);
+			margin: 0px;
+			margin-bottom: 2px;
+			padding: 10px 9px;
+		}
+		footer {
+			margin-left: 40px;
+		}
+		@media (max-width: 1000px){
+			#main{max-width: 100%; max-height: 100%;}
+			#kodex_skill{width: calc(100% - 20px);}
+			#kodex_desc{width: 100%;}
+			.kodex_statchart{width: 100%; margin: 0px;}
+			.kodex_stat{width: calc(25% - 20px); margin-right: 2px;}
+			#kodex_name{width: calc(56% - 22px);}
+			#kodex_cst{width: calc(22% - 22px);}
+		}
 
-	font-size: 23px;
-	border: 1px solid #dddddd;
-	padding: 5px 10px;
-	font-weight: normal;
-
-}
-
-td {
-
-	border: 1px solid #dddddd;
-	padding: 5px 10px;
-
-}
-
-span {
-	overflow-x: scroll;
-}
-
-footer {
-	margin-left: 50px;
-
-}
-.kodex_img {
-
-	width: 100%; height: auto;
-	max-width: 250px; max-height: 350px;
-	min-width: 117px;
-
-}
-.kodex_ind {
-
-	background: #5A688A;
-	color:	white;
-
-}
-
-.kodex_bind {
-
-	background: #00B4FF;
-	color: white;
-
-}
-
-.kodex_imgRank {
-
-	background: #FFEB3B;
-
-}
-
+		@media (max-width: 835px){
+			.kodex_desc_detail{width: calc(100% - 2px);}
+			#kodex_desc{height: auto;}
+		}
+		@media (max-width: 480px){
+			.kodex_img{width: calc(100% - 2px);}
+			#kodex_header{display: none;}
+			#kodex_header_m{display: inline-block;}
+		}
 	</style>
-	<script type="text/javascript">
-if( navigator.userAgent.indexOf('Firefox') >= 0 ) {
-	var eventNames = ["mousedown", "mouseover", "mouseout", 
-	                            "mousemove", "mousedrag", "click", "dblclick",
-	                            "keydown", "keypress", "keyup" ]; 
-		
-	for( var i = 0 ; i < eventNames.length; i++ ) {
-		window.addEventListener( eventNames[i], function(e) {
-			window.event = e;
-		}, true );
-	}
-}
-function getJson(url) {
-	var httpReq = new XMLHttpRequest();
-	httpReq.open("GET", url, false);
-	httpReq.send(null);
-	return httpReq.responseText;
-}
-
-Jdex = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/qurare.json"))
-//eng = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/enskill.json"))
-
-function kinput(value) {
-	document.getElementById('kodex_'+value).innerHTML = eval('dex.'+value);
-}
-srch_len = 0;
-function check(argument) {
-
-	inp = document.getElementById('kodex_srch');
-	if (window.event.keyCode == 13) {
-
-		search(kodex_srch.value);
-		return;
-
-	}
-	else if (kodex_srch.value != '' && srch_len == kodex_srch.length) {
-		showExmpl(kodex_srch.value);
-	}
-	else if (kodex_srch.value == '' && window.event.keyCode == 8) {
-	document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;');		
-	}
-	srch_len = kodex_srch.length;
-
-}
-rarity = {
-	'N':'1',
-	'N+':'2',
-	'R':'3',
-	'R+':'4',
-	'SR':'5',
-	'SR+':'6',
-	'SSR':'7',
-	'QR':'8'
-}
-role = {
-	'공격':'atk',
-	'방어':'hp',
-	'회복':'spr'
-}
-
-function search(srch) {
-
-	dex = eval("Jdex['" + srch + "']");
-	if (dex != undefined) {
-
-		document.getElementById('kodex_img_0').setAttribute('src', encodeURI('Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'an.jpg'));
-		document.getElementById('kodex_img_1').setAttribute('src', encodeURI('Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'bn.jpg'));
-		document.getElementById('kodex_img_2').setAttribute('src', encodeURI('Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'cn.jpg'));
-		kinput('rarity');
-		kinput('name');
-		kinput('cost');
-		document.getElementById('td_rarity').setAttribute('style', 'color: '+dex.rarefont+'; background: '+dex.rareColor+';');
-		document.getElementById('td_name').setAttribute('style', 'color: '+dex.rarefont+'; background: '+dex.rareColor+';');
-		document.getElementById('td_skill').setAttribute('style', 'background: '+dex.roleColor+';');
-		kinput('skill');
-		kinput('role');
-		kinput('skilltype');
-		kinput('faction');
-		kinput('illustrator');
-		kinput('hp0');
-		kinput('atk0');
-		kinput('spr0');
-		for (var i = 0; i < 7; i++) {
-			document.getElementById('kodex_HP_'+i).innerHTML = dex.HP[i];
-			document.getElementById('kodex_ATK_'+i).innerHTML = dex.ATK[i];
-			document.getElementById('kodex_SPR_'+i).innerHTML = dex.SPR[i];
-		}
-
-	}
-	kodex_srch.value = '';
-	document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;')
-
-
-}
-
-ex_list = []
-function exmpl(argument) {
-
-	ex_list = []
-	key_list = Object.keys(Jdex)
-	var j = 0
-	for (var i = 0; i < key_list.length /*&& j < 10*/; i++) {
-		
-		dex = eval("Jdex['" + key_list[i] + "']");
-		if(dex.name.indexOf(kodex_srch.value) != -1){
-
-			ex_list[j] = dex.name;
-			j+=1;
-
-		}
-
-	}
-	return j
-
-}
-
-function showExmpl(argument) {
-
-	len = exmpl();
-	ul = document.getElementById('kodex_exmpl')
-	ul.setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: block;')
-	ul.innerHTML = ''
-	var i = 0
-	for (i = 0; i < len; i++) {
-		if (ex_list[i] != undefined) {
-			dex = eval("Jdex['" + ex_list[i] + "']");
-			ul.innerHTML = ul.innerHTML + "<li onclick='search(ex_list["+i+"])'>"+dex.rarity +"	"+ ex_list[i]+"</li>"
-		}
-
-	}
-	if (i == 0) {
-		document.getElementById('kodex_exmpl').setAttribute('style', 'left: '+inp.offsetLeft+'px; top: '+eval(inp.offsetTop+30)+'px; display: none;')
-	}
-
-
-}
-	</script>
 </head>
-<body>
+<body>	
 	<div id="menu">
 		
 	</div>
 	<header id="Kodex_form"><br>
 		<a href="/"><img id="logo" src="logo.svg"></a><br>
-		<input type="text" id="kodex_srch" onkeyup="check()" placeholder="마도서 이름을 입력하세요!"><br>
+		<input type="text" id="kodex_srch" onkeyup="check()" placeholder="마도서 이름을 입력하세요!"><br><br>
 		<ul id="kodex_exmpl" style="display: none;">
 		</ul>
 	</header>
-	<div id="Kodex_cont">
-		<table id="Kodex">
-			<tbody>
-				<tr>
-					<td id="td_rarity" colspan="2" style="background: #E10044;">
-						<span id="kodex_rarity">
-							SSR
-						</span>
-					</td>
-					<td id="td_name" colspan="6" style="background: #E10044;">
-						<span id="kodex_name">
-							셀라
-						</span>
-					</td>
-					<td style="background: #FFEB3B;">
-						COST<br>
-						<span id="kodex_cost">
-							26
-						</span>
-					</td>
-				</tr>
-				<tr>
-					<td id="td_skill" rowspan="2" colspan="3" style="background: red;">
-						<span id="kodex_skill">
-							강타 VI
-						</span>
-					</td>
-					<th>
-						역할
-					</th>
-					<th style="text-align: left;" colspan="2">
-						<span id="kodex_role">
-							공격
-						</span>
-					</th>
-					<th>
-						속성
-					</th>
-					<th style="text-align: left;" colspan="2">
-						<span id="kodex_skilltype">
-							액티브
-						</span>
-					</th>
-				</tr>
-				<tr>
-					<th>
-						장르
-					</th>
-					<th style="text-align: left;" colspan="2">
-						<span id="kodex_faction">
-							판타지
-						</span>
-					</th>
-					<th>
-						그림
-					</th>
-					<th style="text-align: left;" colspan="2">
-						<span id="kodex_illustrator">
-							달랑게
-						</span>
-					</th>
-				</tr>
-				<tr>
-					<th class="kodex_imgRank" colspan="3">
-						NORMAL
-					</th>
-					<th class="kodex_imgRank" colspan="3">
-						MAX
-					</th>
-					<th class="kodex_imgRank" colspan="3">
-						MAX+			
-					</th>
-				</tr>
-				<tr>
-					<td colspan="3">
-						<img class="kodex_img" id="kodex_img_0" onerror="this.src='noimage.png'" src="Kodex/atk/Smite/7/17005/17005an.jpg">
-					</td>
-					<td colspan="3">
-						<img class="kodex_img" id="kodex_img_1" onerror="this.src='noimage.png'" src="Kodex/atk/Smite/7/17005/17005bn.jpg">
-					</td>
-					<td colspan="3">
-						<img class="kodex_img" id="kodex_img_2" onerror="this.src='noimage.png'" src="Kodex/atk/Smite/7/17005/17005cn.jpg">
-					</td>
-				</tr>
-				<tr>
-					<th class="kodex_ind">
-						스탯
-					</th>
-					<th class="kodex_ind">
-						Lv.1
-					</th>
-					<th class="kodex_ind">
-						MAX
-					</th>
-					<th class="kodex_bind">
-						1결속
-					</th>
-					<th class="kodex_bind">
-						2결속
-					</th>
-					<th class="kodex_bind">
-						3결속
-					</th>
-					<th class="kodex_bind">
-						4결속
-					</th>
-					<th class="kodex_bind">
-						5결속
-					</th>
-					<th class="kodex_bind">
-						초월
-					</th>
-				</tr>
-				<tr>
-					<td class="kodex_ind" style="text-align: left;">
-						HP
-					</td>
-					<td>
-						<span id="kodex_hp0">516</span>
-					</td>
-					<td>
-						<span id="kodex_HP_0">3617</span>
-					</td>
-					<td>
-						<span id="kodex_HP_1">3943</span>
-					</td>
-					<td>
-						<span id="kodex_HP_2">4268</span>
-					</td>
-					<td>
-						<span id="kodex_HP_3">4594</span>
-					</td>
-					<td>
-						<span id="kodex_HP_4">4919</span>
-					</td>
-					<td>
-						<span id="kodex_HP_5">5245</span>
-					</td>
-					<td>
-						<span id="kodex_HP_6">5570</span>
-					</td>
-				</tr>
-				<tr>
-					<td class="kodex_ind" style="text-align: left;">
-						ATK
-					</td>
-					<td>
-						<span id="kodex_atk0">775</span>
-					</td>
-					<td>
-						<span id="kodex_ATK_0">5430</span>
-					</td>
-					<td>
-						<span id="kodex_ATK_1">5919</span>
-					</td>
-					<td>
-						<span id="kodex_ATK_2">6407</span>
-					</td>
-					<td>
-						<span id="kodex_ATK_3">6896</span>
-					</td>
-					<td>
-						<span id="kodex_ATK_4">7385</span>
-					</td>
-					<td>
-						<span id="kodex_ATK_5">7874</span>
-					</td>
-					<td>
-						<span id="kodex_ATK_6">8362</span>
-					</td>
-				</tr>
-				<tr>
-					<td class="kodex_ind" style="text-align: left;">
-						SPR
-					</td>
-					<td>
-						<span id="kodex_spr0">646</span>
-					</td>
-					<td>
-						<span id="kodex_SPR_0">4523</span>
-					</td>
-					<td>
-						<span id="kodex_SPR_1">4930</span>
-					</td>
-					<td>
-						<span id="kodex_SPR_2">5337</span>
-					</td>
-					<td>
-						<span id="kodex_SPR_3">5744</span>
-					</td>
-					<td>
-						<span id="kodex_SPR_4">6151</span>
-					</td>
-					<td>
-						<span id="kodex_SPR_5">6558</span>
-					</td>
-					<td>
-						<span id="kodex_SPR_6">6966</span>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+	<article id="main">
+		<div id="kodex_header">
+			<div class="kodex_head" style="background: #E10044;" id="kodex_rarity">
+				SSR
+			</div><div class="kodex_head" style="background: #E10044;" id="kodex_name">
+				셀라
+			</div><div class="kodex_head" style="background: #FFEB3B; line-height: normal;" id="kodex_cst">
+				COST<br><span id="kodex_cost">26</span>
+			</div>
+		</div>
+		<div id="kodex_header_m">
+			<div class="kodex_head" style="background: #E10044;" id="kodex_name_m">
+				셀라
+			</div><div class="kodex_head" style="background: #E10044;" id="kodex_rarity_m">
+				SSR
+			</div><div class="kodex_head" style="background: #FFEB3B; line-height: normal;" id="kodex_cst_m">
+				COST<br><span id="kodex_cost_m">26</span>
+			</div>
+		</div>
+		<div id="kodex_skill" style="background: red;">
+			강타 VI
+		</div>
+		<div id="kodex_desc">
+			<div class="kodex_desc_detail">
+				<div class="kodex_desc_detail_ind">
+					역할
+				</div>
+				<div id="kodex_role" class="kodex_desc_detail_val">
+					공격
+				</div>
+			</div>
+			<div class="kodex_desc_detail">
+				<div class="kodex_desc_detail_ind">
+					속성
+				</div>
+				<div id="kodex_skilltype" class="kodex_desc_detail_val">
+					액티브
+				</div>
+			</div>
+			<div class="kodex_desc_detail">
+				<div class="kodex_desc_detail_ind">
+					장르
+				</div>
+				<div id="kodex_faction" class="kodex_desc_detail_val">
+					판타지
+				</div>
+			</div>
+			<div class="kodex_desc_detail">
+				<div class="kodex_desc_detail_ind">
+					그림
+				</div>
+				<div id="kodex_illustrator" class="kodex_desc_detail_val">
+					달랑게
+				</div>
+			</div>
+		</div>
+		<div class="kodex_img">
+			<div class="kodex_imgRank">
+				NORMAL
+			</div>
+				<img class="kodex_imgfile" id="kodex_img_0" onerror="this.src='noimage.png'" src="Kodex/atk/Smite/7/17005/17005an.jpg">
+		</div>
+		<div class="kodex_img">
+			<div class="kodex_imgRank">
+				MAX
+			</div>
+				<img class="kodex_imgfile" id="kodex_img_1" onerror="this.src='noimage.png'" src="Kodex/atk/Smite/7/17005/17005bn.jpg">
+		</div>
+		<div class="kodex_img">
+			<div class="kodex_imgRank">
+				MAX+
+			</div>
+				<img class="kodex_imgfile" id="kodex_img_2" onerror="this.src='noimage.png'" src="Kodex/atk/Smite/7/17005/17005cn.jpg">
+		</div>
+		<div class="kodex_statchart">
+			<div class="kodex_stat" style="background: #5A688A; color: white;">
+				스탯
+			</div>
+			<div class="kodex_stat" style="background: #5A688A; color: white;">
+				HP
+			</div>
+			<div class="kodex_stat" style="background: #5A688A; color: white;">
+				ATK
+			</div>
+			<div class="kodex_stat" style="background: #5A688A; color: white;">
+				SPR
+			</div>
+		</div>
+		<div class="kodex_statchart">
+			<div class="kodex_stat" style="background: #5A688A; color: white;">
+				Lv.1
+			</div>
+			<div id="kodex_hp0" class="kodex_stat">
+				516
+			</div>
+			<div id="kodex_atk0" class="kodex_stat">
+				775
+			</div>
+			<div id="kodex_spr0" class="kodex_stat">
+				646
+			</div>
+		</div>
+		<div class="kodex_statchart">
+			<div class="kodex_stat" style="background: #5A688A; color: white;">
+				Lv.MAX
+			</div>
+			<div id="kodex_HP_0" class="kodex_stat">
+				3617
+			</div>
+			<div id="kodex_ATK_0" class="kodex_stat">
+				5430
+			</div>
+			<div id="kodex_SPR_0" class="kodex_stat">
+				4523
+			</div>
+		</div>
+		<div class="kodex_statchart">
+			<div class="kodex_stat" style="background: #00B4FF; color: white;">
+				1결속
+			</div>
+			<div id="kodex_HP_1" class="kodex_stat">
+				3943
+			</div>
+			<div id="kodex_ATK_1" class="kodex_stat">
+				5919
+			</div>
+			<div id="kodex_SPR_1" class="kodex_stat">
+				4930
+			</div>
+		</div>
+		<div class="kodex_statchart">
+			<div class="kodex_stat" style="background: #00B4FF; color: white;">
+				2결속
+			</div>
+			<div id="kodex_HP_2" class="kodex_stat">
+				4268
+			</div>
+			<div id="kodex_ATK_2" class="kodex_stat">
+				6407
+			</div>
+			<div id="kodex_SPR_2" class="kodex_stat">
+				5337
+			</div>
+		</div>
+		<div class="kodex_statchart">
+			<div class="kodex_stat" style="background: #00B4FF; color: white;">
+				3결속
+			</div>
+			<div id="kodex_HP_3" class="kodex_stat">
+				4594
+			</div>
+			<div id="kodex_ATK_3" class="kodex_stat">
+				6896
+			</div>
+			<div id="kodex_SPR_3" class="kodex_stat">
+				5744
+			</div>
+		</div>
+		<div class="kodex_statchart">
+			<div class="kodex_stat" style="background: #00B4FF; color: white;">
+				4결속
+			</div>
+			<div id="kodex_HP_4" class="kodex_stat">
+				4919
+			</div>
+			<div id="kodex_ATK_4" class="kodex_stat">
+				7385
+			</div>
+			<div id="kodex_SPR_4" class="kodex_stat">
+				6151
+			</div>
+		</div>
+		<div class="kodex_statchart">
+			<div class="kodex_stat" style="background: #00B4FF; color: white;">
+				5결속
+			</div>
+			<div id="kodex_HP_5" class="kodex_stat">
+				5245
+			</div>
+			<div id="kodex_ATK_5" class="kodex_stat">
+				7874
+			</div>
+			<div id="kodex_SPR_5" class="kodex_stat">
+				6558
+			</div>
+		</div>
+		<div class="kodex_statchart">
+			<div class="kodex_stat" style="background: #00B4FF; color: white;">
+				초월
+			</div>
+			<div id="kodex_HP_6" class="kodex_stat">
+				5570
+			</div>
+			<div id="kodex_ATK_6" class="kodex_stat">
+				8362
+			</div>
+			<div id="kodex_SPR_6" class="kodex_stat">
+				6965
+			</div>
+		</div>
+	</article>
 	<footer>
 		Copyright ⓒ Sn Kinos All Right Reserved ( except image )
 	</footer>
