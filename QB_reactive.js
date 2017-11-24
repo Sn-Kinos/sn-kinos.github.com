@@ -62,15 +62,25 @@ function search(srch) {
 	dex = eval("Jdex['" + srch + "']");
 	if (dex != undefined) {
 
+		if (srch.indexOf('®') != -1) {
+			temp = srch.substring(2);
+			dex = eval("Jdex['" + temp + "']");
+		}
 		document.getElementById('kodex_img_0').setAttribute('src', encodeURI('Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'an.jpg'));
 		document.getElementById('kodex_img_1').setAttribute('src', encodeURI('Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'bn.jpg'));
 		document.getElementById('kodex_img_2').setAttribute('src', encodeURI('Kodex/'+role[dex.role]+'/'+dex.enskill+'/'+rarity[dex.rarity]+'/'+dex.id+'/'+dex.id+'cn.jpg'));
+		dex = eval("Jdex['" + srch + "']");
 		kinput('rarity');
 		kinput('name');
 		kinput('cost');
-		document.getElementById('td_rarity').setAttribute('style', 'color: '+dex.rarefont+'; background: '+dex.rareColor+';');
-		document.getElementById('td_name').setAttribute('style', 'color: '+dex.rarefont+'; background: '+dex.rareColor+';');
-		document.getElementById('td_skill').setAttribute('style', 'background: '+dex.roleColor+';');
+		document.getElementById('kodex_rarity_m').innerHTML = dex.rarity;
+		document.getElementById('kodex_name_m').innerHTML = dex.name;
+		document.getElementById('kodex_cost_m').innerHTML = dex.cost;
+		document.getElementById('kodex_rarity').setAttribute('style', 'color: '+dex.rarefont+'; background: '+dex.rareColor+';');
+		document.getElementById('kodex_name').setAttribute('style', 'color: '+dex.rarefont+'; background: '+dex.rareColor+';');
+		document.getElementById('kodex_rarity_m').setAttribute('style', 'color: '+dex.rarefont+'; background: '+dex.rareColor+';');
+		document.getElementById('kodex_name_m').setAttribute('style', 'color: '+dex.rarefont+'; background: '+dex.rareColor+';');
+		document.getElementById('kodex_skill').setAttribute('style', 'background: '+dex.roleColor+';');
 		kinput('skill');
 		kinput('role');
 		kinput('skilltype');
