@@ -4,19 +4,51 @@
 	<link rel="stylesheet" type="text/css" href="https://qutabase.github.io/nanum.css">
 	<title>QUTABASE 신호등</title>
 </head>
-<body style="text-align: center; font-family: 'NanumSquareB';">
-QUTABASE 상태 표시 사이트<br>
+<body style="text-align: center; font-size: 22px; background-image: url('https://qutabase.github.io/bgW.png');">
+<img src="https://qutabase.github.io/logo.svg"><br>
+상태 표시 사이트<br>
 <br>
-A: 개발 시작 | B: 개발 일시 중지 | C: 어느 정도 작동<br>
-D: 개발 진행 중 | E: 개선 계획 있음 | F: 정상 작동 가능<br>
+A: 개발 시작 | B: 개발 일시 중지<br>
+C: 어느 정도 작동 | D: 개발 진행 중<br>
+E: 개선 계획 있음 | F: 정상 작동 가능<br>
 <br>
-M: 모바일에서도 정상 작동함<br>
+M: 모바일에서도 정상 작동 가능<br>
 <br>
-마도서 검색 - F, M, E
-스킬 목록 - F, M, E
-마도서 비교 - <strong>D</strong>
-이포 & 무나 보상 - F, M
-덱 시뮬레이터 - C, B, E
+18-02-19 00:31 기준<br>
+마도서 검색 - F, M, E<br>
+스킬 목록 - F, M, E<br>
+마도서 비교 - D<br>
+이포 & 무나 보상 - F, M<br>
+덱 시뮬레이터 - C, B, E<br>
+<br>
+장르 & 일러레 정보가 없는 마도서<br>
+<div id="kodex_list">
+</div>
 
 </body>
+<script src="https://qutabase.github.io/QB_reactive.js"></script>
+<script>
+	list = document.getElementById('kodex_list');
+	for (var x in Jdex) {
+		x = Jdex[x];
+		if (x.faction != '-' && x.illustrator != '-') {
+			;
+		}
+		else if (x.illustrator == '-') {
+			list.innerHTML	=	list.innerHTML
+								+	x.name	+	' - 일러레<br>'
+								;
+		}
+		else if (x.faction == '-') {
+			list.innerHTML	=	list.innerHTML
+								+	x.name	+	' - 장르<br>'
+								;
+		}
+		else {
+			list.innerHTML	=	list.innerHTML
+								+	x.name	+	' - 장르, 일러레<br>'
+								;
+		}
+	}
+</script>
 </html>
