@@ -39,8 +39,16 @@ M: 모바일에서도 정상 작동 가능<br>
 	ⓒ 2017 - 2018 Sn Kinos All Rights Reserved
 </footer>
 </body>
-<script src="https://qutabase.github.io/QB_reactive.js"></script>
 <script>
+	function getJson(url) {
+		var httpReq = new XMLHttpRequest();
+		httpReq.open("GET", url, false);
+		httpReq.send(null);
+		return httpReq.responseText;
+	}
+
+	Jdex = JSON.parse(getJson("https://raw.githubusercontent.com/Sn-Kinos/Qutabase/master/qurare.json"));
+
 	list = document.getElementById('kodex_list');
 	for (var x in Jdex) {
 		x = Jdex[x];
