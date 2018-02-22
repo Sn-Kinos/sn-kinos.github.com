@@ -53,21 +53,21 @@ M: 모바일에서도 정상 작동 가능<br>
 	for (var x in Jdex) {
 		x = Jdex[x];
 		if (x.faction != '-' && x.illustrator != '-') {
-			;
+			return;
+		}
+		if (x.faction == '-' && x.illustrator == '-') {
+			list.innerHTML	=	list.innerHTML
+								+	x.name	+	' - 장르, 일러레<br>'
+								;
 		}
 		else if (x.illustrator == '-') {
 			list.innerHTML	=	list.innerHTML
 								+	x.name	+	' - 일러레<br>'
 								;
 		}
-		else if (x.faction == '-') {
-			list.innerHTML	=	list.innerHTML
-								+	x.name	+	' - 장르<br>'
-								;
-		}
 		else {
 			list.innerHTML	=	list.innerHTML
-								+	x.name	+	' - 장르, 일러레<br>'
+								+	x.name	+	' - 장르<br>'
 								;
 		}
 	}
