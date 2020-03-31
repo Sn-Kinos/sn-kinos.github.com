@@ -55,9 +55,13 @@
         }
       });
     }
+    const timer = {
+      'um': 0,
+      'jun': 100,
+      'sik': 200,
+    }
     function onPlayerReady(event) {
-      console.log(event)
-      event.target.playVideo();
+      setTimeout(function () {event.target.playVideo();}, timer[event.target.f.id])
     }
   </script>
 </body>
