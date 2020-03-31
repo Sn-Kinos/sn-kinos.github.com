@@ -54,13 +54,13 @@
       });
     }
     const timer = {
-      'um': 200,
-      'jun': 300,
-      'sik': 400,
+      'um': 300,
+      'jun': 400,
+      'sik': 500,
     }
     function onPlayerReady(event) {
       event.target.playVideo()
-      event.target.pauseVideo()
+      setTimeout(function () {event.target.pauseVideo()}, 10)
       setTimeout(function () {event.target.playVideo()}, timer[event.target.f.id])
     }
   </script>
