@@ -70,7 +70,9 @@
       sik: false,
     }
     document.addEventListener('loaded', function (event) {
+      console.log(event.detail)
       flag[event.detail.f.id] = true
+      console.log(flag)
       if (flag.um && flag.jun && flag.sik) {
         um.playvideo()
         jun.playvideo()
