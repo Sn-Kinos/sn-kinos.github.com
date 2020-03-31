@@ -54,14 +54,14 @@
       });
     }
     const timer = {
-      'um': 300,
-      'jun': 400,
-      'sik': 500,
+      'um': 0,
+      'jun': 100,
+      'sik': 200,
     }
-    function onPlayerReady(event) {
+    async function onPlayerReady(event) {
       event.target.playVideo()
-      setTimeout(function () {event.target.pauseVideo()}, 100)
-      setTimeout(function () {event.target.playVideo()}, timer[event.target.f.id])
+      await setTimeout(function () {event.target.pauseVideo()}, 300)
+      await setTimeout(function () {event.target.playVideo()}, timer[event.target.f.id])
     }
   </script>
 </body>
