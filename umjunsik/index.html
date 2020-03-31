@@ -3,7 +3,11 @@
 <title>엄비보벳따우</title>
 </head>
 <body>
-  <main></main>
+  <main>
+    <article id='um'></article>
+    <article id='jun'></article>
+    <article id='sik'></article>
+  </main>
   <script>
     const main = document.getElementsByTagName('main')[0]
     setTimeout(function() {
@@ -15,6 +19,49 @@
     setTimeout(function() {
       main.innerHTML += '<iframe width="560" height="315" src="https://www.youtube.com/embed/aI5p1H3MD-g?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
     }, 200)
+    
+    var tag = document.createElement('script');
+
+    tag.src = "https://www.youtube.com/iframe_api";
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
+    let um, jun, sik
+    function onYouTubeIframeAPIReady() {
+      um = new YT.Player('um', {
+        height: '360',
+        width: '640',
+        videoId: '8j0M5c7UzBE',
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+     jun = new YT.Player('jun', {
+        height: '360',
+        width: '640',
+        videoId: 'fhdzt4QfY6c',
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+      sik = new YT.Player('sik', {
+        height: '360',
+        width: '640',
+        videoId: 'aI5p1H3MD-g',
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+    function onPlayerReady(event) {
+      console.log(event)
+      event.target.playVideo();
+    }
   </script>
 </body>
 </html>
