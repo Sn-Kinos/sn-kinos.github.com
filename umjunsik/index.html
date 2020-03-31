@@ -59,7 +59,7 @@
       sik: 200,
     }
     async function onPlayerReady(event) {
-      document.dispatchEvent(new CustomEvent('loaded', {target: event.target, id: event.target.f.id}))
+      document.dispatchEvent(new CustomEvent('loaded', {detail: event.target}))
       event.target.playVideo()
       await setTimeout(function () {event.target.pauseVideo()}, 500)
 //       await setTimeout(function () {event.target.playVideo()}, timer[event.target.f.id])
@@ -70,9 +70,7 @@
       sik: false,
     }
     document.addEventListener('loaded', function (event) {
-      console.log(event)
-      flag[event.id] = true
-      console.log(flag)
+      flag[event.detail.f.id] = true
       if (flag.um && flag.jun && flag.sik) {
         um.playvideo()
         jun.playvideo()
