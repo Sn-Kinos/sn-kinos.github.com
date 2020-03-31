@@ -60,9 +60,9 @@
     }
     async function onPlayerReady(event) {
       document.dispatchEvent(new Event('loaded', {target: event.target, id: event.target.f.id}))
-      event.target.playVideo()
-      await setTimeout(function () {event.target.pauseVideo()}, 300)
-      await setTimeout(function () {event.target.playVideo()}, timer[event.target.f.id])
+//       event.target.playVideo()
+//       await setTimeout(function () {event.target.pauseVideo()}, 300)
+//       await setTimeout(function () {event.target.playVideo()}, timer[event.target.f.id])
     }
     let flag = {
       um: false,
