@@ -70,6 +70,7 @@
       sik: false,
     }
     document.addEventListener('loaded', function (event) {
+      console.log(event)
       flag[event.id] = true
       console.log(flag)
       if (flag.um && flag.jun && flag.sik) {
