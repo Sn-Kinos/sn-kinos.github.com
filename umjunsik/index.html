@@ -75,9 +75,9 @@
       flag[event.detail.f.id] = true
       console.log(flag)
       if (flag.um && flag.jun && flag.sik) {
-        setTimeout(um.playVideo()
-        setTimeout(jun.playVideo()
-        setTimeout(sik.playVideo()
+        setTimeout(um.playVideo, timer.um)
+        setTimeout(jun.playVideo, timer.jun)
+        setTimeout(sik.playVideo, timer.sik)
       }
     })
   </script>
