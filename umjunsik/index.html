@@ -59,7 +59,9 @@
       'sik': 400,
     }
     function onPlayerReady(event) {
-      setTimeout(function () {event.target.playVideo();}, timer[event.target.f.id])
+      event.target.playVideo()
+      event.target.pauseVideo()
+      setTimeout(function () {event.target.playVideo()}, timer[event.target.f.id])
     }
   </script>
 </body>
