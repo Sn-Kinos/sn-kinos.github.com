@@ -59,10 +59,11 @@
       sik: 200,
     }
     async function onPlayerReady(event) {
-      document.dispatchEvent(new CustomEvent('loaded', {detail: event.target}))
       event.target.playVideo()
-      await setTimeout(function () {event.target.pauseVideo()}, 500)
-//       await setTimeout(function () {event.target.playVideo()}, timer[event.target.f.id])
+      await setTimeout(function () {
+        event.target.pauseVideo()
+        document.dispatchEvent(new CustomEvent('loaded', {detail: event.target}))
+      }, 500)
     }
     let flag = {
       um: false,
@@ -74,9 +75,9 @@
       flag[event.detail.f.id] = true
       console.log(flag)
       if (flag.um && flag.jun && flag.sik) {
-        um.playVideo()
-        jun.playVideo()
-        sik.playVideo()
+        setTimeout(um.playVideo()
+        setTimeout(jun.playVideo()
+        setTimeout(sik.playVideo()
       }
     })
   </script>
