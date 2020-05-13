@@ -1,0 +1,13 @@
+<html>
+<body>
+<script>
+document.addEventListener('scroll', function () { console.log('scrolled') })
+window.addEventListener('vrdisplayconnect', function () { console.log('호환되는 VRDisplay 가 컴퓨터에 연결되었을 때.') })
+window.addEventListener('vrdisplaydisconnect', function () { console.log('호환되는 VRDisplay 가 컴퓨터로부터 연결해제되었을 때.') })
+window.addEventListener('vrdisplayactivate', function () { console.log('VR 디스플레이가 표시될 수 있을 때. 예, HMD 가 움직여 대기모드에서 나오거나, 착용에의해 준비될 때.') })
+window.addEventListener('vrdisplaydeactivate', function () { console.log('VRDisplay 가 더 이상 표시될 수 없을 때. 예, 비활성 기간으로 인해 HMD 가 대기 또는 슬립모드로 빠졌을 때.') })
+window.addEventListener('vrdisplayblur', function () { console.log('브라우저, OS 또는 VR 장치로부터 어떤 이유에 의해 VRDisplay 로의 프리젠테이션이 중단되었을 때. 예, 사용자가 시스템 메뉴나 브라우저와 인터렉팅하는동안 추적이나 경험 손실을 방지.') })
+window.addEventListener('vrdisplayfocus', function () { console.log('흐릿해진 이후에 VRDisplay 로의 프리젠테이션이 재개될 때.') })
+window.addEventListener('vrdisplaypresentchange', function () { console.log('VRDisplay 의 프리젠팅 상태가 변경할 때. 예, 프리젠팅에서 프리젠팅이 아닌 것이 될 때, 또는 그 반대.') })
+</body>
+</html>
